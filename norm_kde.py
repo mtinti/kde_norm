@@ -34,14 +34,17 @@ def make_norm_kde(ax_old, ax_new):
 #test with pandas
 def test_1():
     import pandas as pd
+    
     dataset_1 = np.random.normal(size=100, loc=2, scale=1.0)
     dataset_2 = np.random.normal(size=100, loc=5, scale=5.0)
     df = pd.DataFrame()
     df['dataset_1']=dataset_1
     df['dataset_2']=dataset_2
+
     fig,ax = plt.subplots()
     df.plot(kind='kde',ax=ax)
     plt.show()
+    
     fig2,ax2 = plt.subplots()
     make_norm_kde(ax, ax2)
     plt.show()
@@ -50,8 +53,8 @@ def test_1():
 #test with seaborn
 def test_2():
     import seaborn as sns
+    
     sns.set(color_codes=True)
-
     dataset_1 = np.random.normal(size=100, loc=2, scale=1.0)
     dataset_2 = np.random.normal(size=100, loc=5, scale=5.0)
 
